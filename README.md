@@ -113,7 +113,7 @@ Step 5: After running the script, a user-friendly dashboard will open, showing v
     ps -eo pid,ppid,cmd,comm,%mem,%cpu --sort=-%CPU | head -5
 
 
-> 6. When the user selects option 6, the Service Monitoring will open.
+> 7. When the user selects option 7, the Service Monitoring will open.
 
  **This command will check the status of services in for loop and display the status of essential services print a message indicating whether each service is running or not.**
 
