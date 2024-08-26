@@ -52,9 +52,9 @@ Step 5: After running the script, a user-friendly dashboard will open, showing v
 
 > 1. When the user selects option 1, the most used cpu and memory Application will open.
 
- **This command will sort the Top 10 Application by memory usage.**
+- This command will sort the Top 10 Application by memory usage.
 
-    ps -eo pid,ppid,cmd,comm,%mem,%cpu --sort=-%mem | head -10
+        ps -eo pid,ppid,cmd,comm,%mem,%cpu --sort=-%mem | head -10
     
  **This command will sort the Top 10 Application by CPU usage.**
 
