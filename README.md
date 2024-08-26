@@ -22,8 +22,6 @@ Ensure you have the following installed on your system:
 - **Process Monitoring**: Lists active processes and their resource consumption.
 - **Service Monitoring**: Checks the status of key system services.
 
-
-
 #### To start the application
 
 Step 1: Clone the repository
@@ -32,7 +30,7 @@ Step 1: Clone the repository
 
 Step 2: Change the directory
 
-    cd /DevOps-task
+    cd /Downloads
     
 Step 3: Make the Script Executable by changing the permission of file
 
@@ -73,55 +71,54 @@ Step 5: After running the script, a user-friendly dashboard will open, showing v
 
  3. Disk Usage:
 
- **This command will display the total Disk usage.**
+- Total Disk Usage:
 
-    df -h
+        df -h
 
- **This command will display the Disk usage more than 80%.**
+- Disk Usage More Than 80%:
  
-    df -h | awk 'NR==1 || $5+0 > 80 {print}' | awk 'NR==1 {print; next} $5+0 > 80 {print "\033[1;31m" $0 "\033[0m"}'
+        df -h | awk 'NR==1 || $5+0 > 80 {print}' | awk 'NR==1 {print; next} $5+0 > 80 {print "\033[1;31m" $0 "\033[0m"}'
 
-> 4. When the user selects option 4, the System Load will open.
+ 4. System Load:
 
- **This command will display the Current load average of system.**
+- Current Load Average:
 
-    uptime
+        uptime
 
- **This command will display the Breakdown of CPU usage.**
+ - Breakdown of CPU Usage:
  
-    mpstat
+        mpstat
     
-> 5. When the user selects option 5, the Swap and Memory usage will open.
+ 5. Memory Usage:
 
- **This command will display the Memory and swap free and used usage.**
+ - Total Memory and Swap Usage:
 
-    free -h
+        free -h
 
-> 6. When the user selects option 6, the Process Monitoring will open.
+6. Process Monitoring.
+   
+- Number of Active Processes:
 
- **This command will display the number of active processes.**
+        top -bn1 | grep "Tasks:"
 
-    top -bn1 | grep "Tasks:"
-
- **This command will display the top 5 Application by Memory Usage.**
+ - Top 5 Applications by Memory Usage:
  
-    ps -eo pid,ppid,cmd,comm,%mem,%cpu --sort=-%mem | head -5
+        ps -eo pid,ppid,cmd,comm,%mem,%cpu --sort=-%mem | head -5
 
-
- **This command will display the top 5 Application by CPU Usage.**
+- Top 5 Applications by CPU Usage:
  
-    ps -eo pid,ppid,cmd,comm,%mem,%cpu --sort=-%CPU | head -5
+        ps -eo pid,ppid,cmd,comm,%mem,%cpu --sort=-%CPU | head -5
 
 
-> 7. When the user selects option 7, the Service Monitoring will open.
+7. Service Monitoring:
 
- **This command will check the status of services in for loop and display the status of essential services print a message indicating whether each service is running or not.**
+- Service Status:
 
-    for SERVICE in "${SERVICES[@]}"; do
-    if systemctl is-active --quiet $SERVICE; then
+        for SERVICE in "${SERVICES[@]}"; do
+        if systemctl is-active --quiet $SERVICE; then
         echo -e "\e[1;32m$SERVICE is running.\e[0m";echo
-    else
+        else
         echo -e "\e[1;31m$SERVICE is NOT running!\e[0m";echo
-    fi
-    done
-    }
+        fi
+        done
+        }
