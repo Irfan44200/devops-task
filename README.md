@@ -30,7 +30,7 @@ Step 1: Clone the repository
 
 Step 2: Change the directory
 
-    cd /Downloads
+    cd Downloads/devops-task-main
     
 Step 3: Make the Script Executable by changing the permission of file
 
