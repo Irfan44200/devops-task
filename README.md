@@ -56,22 +56,22 @@ Step 5: After running the script, a user-friendly dashboard will open, showing v
 
         ps -eo pid,ppid,cmd,comm,%mem,%cpu --sort=-%mem | head -10
     
- **This command will sort the Top 10 Application by CPU usage.**
+ - CPU Usage:
 
-    ps -eo pid,ppid,cmd,comm,%mem,%cpu --sort=-%CPU | head -10
+        ps -eo pid,ppid,cmd,comm,%mem,%cpu --sort=-%CPU | head -10
 
 
-> 2. When the user selects option 2, the Network Monitoring will open.
+ 2. Network Monitoring:
 
- **This command will display the Number of concurrent connections.**
+- Number of Concurrent Connections:
 
-    netstat -an | grep 'ESTABLISHED' | wc -l
+        netstat -an | grep 'ESTABLISHED' | wc -l
 
- **This command will display the Number of Packets dropped.**
+- Number of Packets Dropped:
  
-    ip -s link
+        ip -s link
 
-> 3. When the user selects option 3, the Disk Usage will open.
+ 3. Disk Usage:
 
  **This command will display the total Disk usage.**
 
