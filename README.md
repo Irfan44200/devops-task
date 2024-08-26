@@ -50,7 +50,7 @@ Step 5: After running the script, a user-friendly dashboard will open, showing v
 ### Dashboard Components
 
 
-> 1. When the user selects option 1, the most used cpu and memory Application will open.
+ 1. Top 10 Memory and CPU Usage Applications:
 
 - This command will sort the Top 10 Application by memory usage.
 
